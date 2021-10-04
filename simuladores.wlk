@@ -29,15 +29,15 @@ class Planificador inherits Simulador {
 }
 
 class Caracterizador inherits Simulador {
-    const disfraces = ["NASA", "vampiro", "fiscal"]
+    const disfraces = #{"NASA", "vampiro", "fiscal"}
     const pseudonimo
 
     override method puedeSimular() = pseudonimo == "Máximo Cozetti"
 }
 
 class Tecnico inherits Simulador {
-    const equipamientoAdquirido = ["puma", "helicoptero", "betún"]
-    var equipamientoPendiente = []
+    const equipamientoAdquirido = #{"puma", "helicoptero", "betún"}
+    const equipamientoPendiente = #{}
 
     override method dineroACobrar() = 1500 * equipamientoAdquirido.size()
 
