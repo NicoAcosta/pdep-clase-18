@@ -1,0 +1,56 @@
+@startuml
+abstract Simulador {
+  nombre
+  edad
+  dinero
+
+  dineroACobrar()
+  cobrar()
+  
+  abstract puedeSimular()
+}
+class Planificador {
+  requisitos
+  tieneFuego
+  
+  override puedeSimular()
+  
+}
+class Caracterizador {
+  disfraces
+  pseudonimo
+  
+  override puedeSimular()
+}
+class Tecnico {
+  equipamientoAdquirido
+  equipamientoPendiente
+  
+  override dineroACobrar()
+  override puedeSimular()
+}
+class Investigador {
+  override dineroACobrar()
+  override puedeSimular()
+}
+
+class Extra {
+  nombre
+
+  puedeSimular()
+}
+
+interface Participante {
+  puedeSimular()
+}
+
+Simulador <|-- Planificador
+Simulador <|-- Caracterizador
+Simulador <|-- Tecnico
+Simulador <|-- Investigador
+
+Extra "*"<-- Planificador : extras
+
+Participante <|.. Simulador
+Participante <|.. Extra
+@enduml
